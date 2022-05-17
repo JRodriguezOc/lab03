@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var today = new Date();
+            var fecha = today.getDate() + '*' + (today.getMonth()+1) + '*' + today.getFullYear();
+            var hora = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+            var fechaHora = fecha + ' ' + hora;
+            console.log(fechaHora);    
+            document.querySelector("#fechaHora").innerHTML = fechaHora;
+
+            function recitar() {
+                const url = 'http://localhost:3000/recitar'
+                fetch(url).then(
+                    response => response.json()
+                ).then(
+                    data => {
+                        document.querySelector("#ejemplo").innerHTML = data.text
+                    }
+                )
+            }
+
+            document.querySelector('#recuperarPoema').onclick = () => {
+                recitar();
+                return false;
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h2>HOLA</h2>
+    </header>
+    <h3 id="fechaHora"></h3>
+    <button id="recuperarPoema">Recuperar Poema</button>
+    <div id="ejemplo"></div>
+</body>
+</html>
