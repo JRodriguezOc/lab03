@@ -302,8 +302,9 @@ Su aplicación debe ser de página única, es decir que sólo habrá un archivo 
 ## RESOLUCIÓN
 1. Listar los archivos
    -  Como vamos a trabajar con archivos, hay que tener en cuenta el módulo File System, en una variable a la que llamaremos files le asignaremos un arreglo con los nombres de los archivos de la carpeta donde se guardaron. Finalmente, en este caso, lo vamos a imprimir en la consola, justo en la función donde nosotros iniciamos el servidor.
+
     ```sh
-    	const fs = require('fs');
+    const fs = require('fs');
 	const path = require('path');
 	const express = require('express');
 	app.use(express.static('public'))
@@ -313,15 +314,24 @@ Su aplicación debe ser de página única, es decir que sólo habrá un archivo 
     		console.log(files);;
 	})
     ```
-2. Ver el contenido de los archivos traducidos a HTML
+    <img src="images/Enlistar.PNG" >
+
+
 
 #
 
 ## CUESTIONARIO
 - En el Ejemplo "Hola Mundo" con NodeJS. ¿Qué pasó con la línea: "Content type ….."?
+
+  	- La pregunta se debe ya que en Ayax se usa el Content Type para saber la clase o tipo de contenido que se está enviando de cliente a servidor. En el ejemplo ya no se usa ya que estamos empezando a trabajar con node express, una forma más sencilla de como el cliente y servidor se pueden comunicar por medio de JSON.
 - En los ejercicios. ¿En qué lugar debería estar el archivo poema.txt?
+  
+  	- Se ubica normalmente en la carpeta priv, podriamos decir que debe ser una carpeta donde solo el programador puede acceder y no el cliente.
 - ¿Entiende la expresión regular en el código y se da cuenta de para qué es útil?
+  
+  	- Su utilidad es ver que existen frameworks que te facilitan a la hora de querer una interacción entre cliente y servidor
 - Note que la respuesta del servidor está en formato JSON, ¿Habrá alguna forma de verla directamente?
+ 
 
 #
 
