@@ -299,6 +299,22 @@ Su aplicación debe ser de página única, es decir que sólo habrá un archivo 
 
 -   Si los enlaces proporcionado en esta guía no le son suficientes, puede revisar códigos en Internet que le ayuden con cosas como ejemplos: listar un directorio en NodeJS; pero deberá incluir los enlaces correspondientes en sus archivos como comentarios y sólo podrá usar código de stackoverflow, incluir código de cualquier otra fuente está prohibido y se considerará actitud deshonesta.
 
+## RESOLUCIÓN
+1. Listar los archivos
+   -  Como vamos a trabajar con archivos, hay que tener en cuenta el módulo File System, en una variable a la que llamaremos files le asignaremos un arreglo con los nombres de los archivos de la carpeta donde se guardaron. Finalmente, en este caso, lo vamos a imprimir en la consola, justo en la función donde nosotros iniciamos el servidor.
+    ```sh
+    	const fs = require('fs');
+	const path = require('path');
+	const express = require('express');
+	app.use(express.static('public'))
+	
+	app.listen(3000, () => {
+    		console.log("Escuchando en: http://localhost:3000");
+    		console.log(files);;
+	})
+    ```
+2. Ver el contenido de los archivos traducidos a HTML
+
 #
 
 ## CUESTIONARIO
